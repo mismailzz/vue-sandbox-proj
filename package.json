@@ -13,6 +13,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "volar-service-vetur": "^0.0.30",
     "vue": "^3.4.15"
   },
   "devDependencies": {
