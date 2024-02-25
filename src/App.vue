@@ -1,44 +1,22 @@
 <script>
 import IncCounter from './components/IncCounter.vue'
 import BenSimpleExample from './components/BenSimpleExample.vue'
+import propsExample from './components/propsExample.vue'
 
 export default {
   components: {
     IncCounter,
     BenSimpleExample,
+    propsExample,
   },
   /*Adding @bencodezen code*/
   data() {
     return {
-      message: "Hello it works",
-      listOfNumbers: [
-        {
-          name: 1,
-          id: "6a887cd2-f0bf-4321-b192-92016f82a883",
-          list: [1, 2, 3],
-        },
-        {
-          name: 2,
-          id: "8d14d90b-2d47-473e-8293-d5c324111d0d",
-          list: [1, 2, 3],
-        },
-        {
-          name: 3,
-          id: "cd806d65-2309-4625-9104-dcd636cd79b5",
-          list: [1, 2, 3],
-        },
-        {
-          name: 4,
-          id: "00c939cd-fbf4-46d0-8e61-0bc2ce8a5332",
-          list: [1, 2, 3],
-        },
-        {
-          name: 5,
-          id: "295a8170-59c1-4462-9de1-3c9cd41cedab",
-          list: [1, 2, 3],
-        },
+      characterList: [
+        {"Goku": "Ultra-Instict"},
+        {"Vagita": "Goat of Destruction"}
       ],
-    };
+    }
   },
 }
 
@@ -48,6 +26,11 @@ export default {
   <div id="app">
     <IncCounter />
     <BenSimpleExample />
+    <propsExample :character="characterList"/> <!--we can also pass func. from parents but not 
+    recommended approach because parent need to do lot of stuff. Will study a bit later that why
+    we dont use props for passing func. Now we are binding dynamic variable and passing to 
+    component. Its kind of passing the properties to the components, on which child will work like
+    kind of a func-->
 
     
   </div>
