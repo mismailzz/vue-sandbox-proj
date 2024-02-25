@@ -3,8 +3,22 @@ export default {
   data(){
     return {
       increment_counter: 0,
-      tens_counter: 0
+      tens_counter: 0,
     }
+  },
+  computed: {
+
+    event_status(){
+
+      let temp_status = "NOT FOUND"
+      if (this.increment_counter % 10 === 0 && this.increment_counter !== 0){
+        temp_status = "FOUND"
+      }else {
+        temp_status = "NOT FOUND"
+      }
+      return temp_status
+    }
+
   },
   watch: {
     // Watch the increment_counter for changes
@@ -40,5 +54,9 @@ export default {
 
     <!-- Monitor 10's increment -->
     <p>10's Increment: {{ tens_counter }}</p>
+
+    <!-- Found Event or Not -->
+    <p>10's Event: {{ event_status }}</p>
+
   </div>
 </template>
